@@ -1,0 +1,142 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
+    "etc",
+    "node",
+    "material-ui",
+    "mui-unused-classes"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "airbnb-base",
+    "airbnb/hooks",
+    "airbnb-typescript",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@next/next/recommended",
+    "prettier"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 11,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".json", ".ts", ".tsx"]
+      },
+      "typescript": {
+        "project": "./tsconfig.json"
+      }
+    }
+  },
+  "rules": {
+    "no-use-before-define": ["off"],
+    "linebreak-style": ["error", "unix"],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ],
+    "semi": ["error", "always"],
+    "prefer-template": ["error"],
+    // 相対importの禁止
+    "no-restricted-imports": ["error", { "patterns": ["./", "../"] }],
+    "react/prop-types": [0],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    // 比較演算子の"=="を”＝＝＝”に修正する
+    "eqeqeq": 2,
+    "no-console": "warn",
+    "object-shorthand": "error",
+    "arrow-body-style": ["error"],
+    "no-else-return": ["error"],
+    "consistent-return": ["error"],
+    "no-unneeded-ternary": ["error"],
+    "prefer-object-spread": ["error"],
+    "class-methods-use-this": ["error"],
+    "no-plusplus": ["error"],
+    "no-param-reassign": ["error", { "props": false }],
+    "react/jsx-no-constructed-context-values": ["error"],
+    "react/self-closing-comp": ["error"],
+    "react/no-array-index-key": ["error"],
+    "react/jsx-props-no-spreading": ["error"],
+    "react/jsx-curly-brace-presence": ["error"],
+    "react/button-has-type": ["error"],
+    "react/jsx-no-useless-fragment": ["error"],
+    "react-hooks/exhaustive-deps": ["error"],
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "@typescript-eslint/dot-notation": ["error"],
+    "@typescript-eslint/lines-between-class-members": ["error"],
+    "@typescript-eslint/no-shadow": ["error"],
+    "import/newline-after-import": ["error"],
+    "import/no-duplicates": ["error"],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/first": ["error"],
+    "import/no-cycle": ["error"],
+    "jsx-a11y/alt-text": ["error"],
+    "jsx-a11y/anchor-is-valid": ["error"],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "variable",
+        "format": ["camelCase"]
+      },
+      {
+        "selector": "variable",
+        "types": ["function"],
+        "format": ["camelCase", "PascalCase"]
+      },
+      {
+        "selector": "variable",
+        "types": ["boolean"],
+        "prefix": ["is", "has", "should"],
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": "parameter",
+        "format": ["camelCase"]
+      },
+      {
+        "selector": "memberLike",
+        "format": ["camelCase"]
+      },
+      {
+        "selector": "typeLike",
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": "method",
+        "format": ["camelCase"]
+      },
+      { "selector": "property", "format": null }
+    ],
+    "react/require-default-props": ["off"],
+    "no-underscore-dangle": ["off"],
+    "prefer-destructuring": ["off"],
+    "react/destructuring-assignment": ["error", "never"],
+    "react/function-component-definition": [1, { "namedComponents": "arrow-function" }],
+    "import/prefer-default-export": ["off"]
+  }
+}
